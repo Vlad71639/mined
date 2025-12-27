@@ -4,139 +4,206 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Minedrop (Mine Drop) — слот в стиле Minecraft | Играть онлайн</title>
-<meta name="description" content="Играйте в Minedrop (Mine Drop) — увлекательный слот в стиле Minecraft. Играть онлайн прямо сейчас!">
+<meta name="description" content="Играйте в Minedrop (Mine Drop) — увлекательный слот в стиле Minecraft. Онлайн бесплатно прямо сейчас!">
 <meta name="keywords" content="Minedrop, Mine Drop, играть онлайн, слот Minecraft, free slot, play online">
-<link rel="icon" href="favicon.jpg" type="image/jpeg">
+<link rel="canonical" href="https://minedropslot.vercel.app">
+<link rel="icon" href="https://minedropslot.vercel.app/favicon.jpg" type="image/jpeg">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Minedrop (Mine Drop) — слот в стиле Minecraft">
+<meta property="og:description" content="Играйте в Minedrop — увлекательный слот в стиле Minecraft прямо в браузере!">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://minedropslot.vercel.app">
+<meta property="og:image" content="https://minedropslot.vercel.app/background.jpg">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Minedrop (Mine Drop) — слот в стиле Minecraft">
+<meta name="twitter:description" content="Играйте в Minedrop — увлекательный слот в стиле Minecraft прямо в браузере!">
+<meta name="twitter:image" content="https://minedropslot.vercel.app/background.jpg">
+
+<!-- Structured Data: VideoGame & Breadcrumb -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Minedrop (Mine Drop)",
+  "url": "https://minedropslot.vercel.app",
+  "image": "https://minedropslot.vercel.app/background.jpg",
+  "description": "Minedrop — слот в стиле Minecraft с уникальной механикой разрушения блоков и каскадными выигрышами. Играйте онлайн без скачивания.",
+  "genre": "Casino, Slot",
+  "operatingSystem": "Browser",
+  "applicationCategory": "Game",
+  "author": { "@type": "Organization", "name": "Minedrop Slot" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://minedropslot.vercel.app" },
+    { "@type": "ListItem", "position": 2, "name": "Об игре", "item": "https://minedropslot.vercel.app#about" },
+    { "@type": "ListItem", "position": 3, "name": "FAQ", "item": "https://minedropslot.vercel.app#faq" }
+  ]
+}
+</script>
 
 <style>
-    /* --- ШРИФТЫ --- */
-    @font-face { font-family: 'Minecraft'; src: url('fonts/minecraft-ten-font-cyrillic.woff2') format('woff2'); }
-    @font-face { font-family: 'Benzin'; src: url('fonts/BenzinBold.woff2') format('woff2'); font-weight: bold; }
+/* --- ШРИФТЫ --- */
+@font-face { font-family: 'Minecraft'; src: url('fonts/minecraft-ten-font-cyrillic.woff2') format('woff2'); }
+@font-face { font-family: 'Benzin'; src: url('fonts/BenzinBold.woff2') format('woff2'); font-weight: bold; }
+* { box-sizing: border-box; margin:0; padding:0; }
+body { font-family: 'Benzin', sans-serif; color:#fff; display:flex; flex-direction:column; align-items:center; min-height:100vh; position:relative; overflow-x:hidden; background:#0b0b0b; font-size:80%; }
 
-    /* --- ОБЩИЕ СТИЛИ --- */
-    * { box-sizing: border-box; margin:0; padding:0; }
-    body { font-family: 'Benzin', sans-serif; color:#fff; display:flex; flex-direction:column; align-items:center; min-height:100vh; position:relative; overflow-x:hidden; }
+/* Фон с премиальной анимацией */
+body::before {
+    content:"";
+    position:fixed; top:0; left:0; width:100%; height:100%;
+    background-image:url('https://minedropslot.vercel.app/background.jpg');
+    background-size:cover; background-position:center;
+    filter:blur(4px) brightness(0.48) contrast(1.18);
+    z-index:-1; transform:scale(1.02);
+    animation: bgZoom 30s infinite alternate;
+}
+@keyframes bgZoom { from {transform:scale(1.02);} to {transform:scale(1.07);} }
 
-    /* Фон */
-    body::before {
-        content:"";
-        position:fixed;
-        top:0; left:0;
-        width:100%; height:100%;
-        background-image:url('background.jpg');
-        background-size:cover;
-        background-position:center;
-        filter:blur(6px);
-        z-index:-1;
-        transform:scale(1.05);
-    }
+.container { max-width:950px; width:100%; padding:40px 15px; display:flex; flex-direction:column; align-items:center; }
 
-    .container { max-width:1200px; width:100%; padding:30px 20px; display:flex; flex-direction:column; align-items:center; }
+/* Заголовок премиум с блеском и сильным свечением */
+h1 { font-family: 'Minecraft', sans-serif; text-transform: uppercase; text-align: center; font-size: 52px;
+color: #ffd700; text-shadow: 4px 4px 12px rgba(0,0,0,0.9), 0 0 30px rgba(255,215,0,0.7);
+margin-bottom:40px; position:relative; }
+h1::after {
+    content: '';
+    position:absolute; top:0; left:0; width:100%; height:100%;
+    background: linear-gradient(120deg, rgba(255,255,255,0.3), rgba(255,255,255,0) 50%, rgba(255,255,255,0.3));
+    background-size:250% 100%;
+    animation: shine 3s infinite;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+@keyframes shine { 0% { background-position:-250% 0; } 100% { background-position:250% 0; } }
 
-    /* Заголовок */
-    h1 {
-        font-family:'Minecraft', sans-serif;
-        text-transform:uppercase;
-        text-align:center;
-        font-size:48px;
-        text-shadow:
-            2px 2px 0 #000,
-            -2px -2px 0 #000,
-            2px -2px 0 #000,
-            -2px 2px 0 #000,
-            0 0 10px #ffd700;
-        margin-bottom:30px;
-        animation: glow 2s infinite alternate;
-    }
+/* Видео премиум */
+.video-wrapper { position:relative; width:460px; height:280px; margin:30px 0;
+border:6px solid #ffd700; border-radius:25px; background:#000;
+box-shadow:0 30px 70px rgba(0,0,0,0.9); overflow:hidden; transition:transform 0.4s; }
+.video-wrapper:hover { transform:scale(1.05); }
+.video-wrapper video { width:100%; height:100%; object-fit:cover; border-radius:20px; filter: brightness(1.25) contrast(1.15); }
 
-    @keyframes glow {
-        0% { text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 0 0 5px #ffd700; }
-        50% { text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 0 0 15px #ffd700; }
-        100% { text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 0 0 10px #ffd700; }
-    }
+/* Кнопка премиум */
+.play-button { display:inline-block; background:linear-gradient(45deg,#ffd700,#ffeb66); color:#000; font-weight:bold;
+padding:20px 52px; margin:35px 0; border-radius:25px; text-decoration:none; font-size:24px;
+box-shadow:0 14px 40px rgba(0,0,0,0.9); transition: all 0.4s; text-align:center; position:relative; overflow:hidden; }
+.play-button::after { content:''; position:absolute; top:0; left:-75%; width:50%; height:100%; background:rgba(255,255,255,0.3); transform:skewX(-25deg); transition: all 0.5s; }
+.play-button:hover::after { left:125%; }
+.play-button:hover { transform:scale(1.18); box-shadow:0 18px 50px rgba(0,0,0,0.95); }
 
-    /* Видео */
-    .video-wrapper { position:relative; width:500px; height:300px; margin:30px 0; border:6px solid #000; background:#000; box-shadow:0 15px 30px rgba(0,0,0,0.6); border-radius:12px; display:flex; justify-content:center; align-items:center; }
-    .video-wrapper video { width:100%; height:100%; object-fit:cover; border-radius:6px; }
+/* Разделы премиум */
+.section { background:rgba(0,0,0,0.94); border:3px solid #ffd700; padding:40px; margin:28px 0;
+border-radius:30px; text-align:center; max-width:900px; box-shadow:0 20px 60px rgba(0,0,0,0.9); transition: transform 0.4s, box-shadow 0.4s; }
+.section:hover { transform:translateY(-12px); box-shadow:0 25px 70px rgba(0,0,0,0.95); }
+.section h2 { margin-bottom:28px; font-size:32px; color:#ffd700; text-shadow:2px 2px 10px rgba(0,0,0,0.8); letter-spacing:1px; }
+.section p, .section ul { font-size:16px; line-height:1.6; text-align:left; display:inline-block; max-width:92%; }
+.section ul { list-style-type: disc; padding-left:28px; }
 
-    /* Кнопка */
-    .play-button { display:inline-block; background:#ffcc00; color:#000; font-weight:bold; padding:20px 40px; margin:20px 0; border-radius:12px; text-decoration:none; font-size:22px; box-shadow:0 4px 12px rgba(0,0,0,0.5); transition:transform 0.2s; }
-    .play-button:hover { transform:scale(1.05); background:#ffd633; }
+/* FAQ аккордеон премиум */
+.faq-item { margin-bottom:24px; border-bottom:1px solid rgba(255,215,0,0.3); border-radius:15px; overflow:hidden; }
+.faq-item h3 { cursor:pointer; padding:14px; font-size:20px; background:rgba(255,215,0,0.12); border-radius:15px; position:relative; transition: background 0.3s; }
+.faq-item h3::after { content: '+'; position:absolute; right:20px; font-weight:bold; font-size:21px; }
+.faq-item.active h3::after { content: '-'; }
+.faq-item.active h3 { background:rgba(255,215,0,0.25); }
+.faq-item p { margin-left:15px; max-height:0; overflow:hidden; transition:max-height 0.5s ease, padding 0.3s; padding:0 0; font-size:16px; }
+.faq-item.active p { max-height:480px; padding:12px 0; }
 
-    /* Разделы текста */
-    .section { background:rgba(0,0,0,0.7); border:3px solid #000; padding:30px; margin:20px 0; border-radius:12px; text-align:center; max-width:1000px; }
-    .section h2 { margin-bottom:20px; }
-    .section p, .section ul { font-size:18px; line-height:1.5; text-align:left; display:inline-block; max-width:90%; }
-    .section ul { list-style-type: disc; padding-left:20px; }
+/* Анимация секций при скролле */
+.section { opacity:0; transform:translateY(40px); transition: all 0.9s ease-in-out; }
+.section.visible { opacity:1; transform:translateY(0); }
 
-    /* FAQ */
-    .faq-item { margin-bottom:15px; }
-    .faq-item h3 { cursor:pointer; }
-    .faq-item p { margin-left:15px; }
-
-    /* Адаптив */
-    @media(max-width:768px){
-        .video-wrapper { width:90%; height:auto; aspect-ratio:5/3; }
-        .section { padding:20px; }
-        .play-button { font-size:18px; padding:15px 30px; }
-    }
+/* Адаптив */
+@media(max-width:768px){
+    .video-wrapper { width:95%; height:auto; aspect-ratio:5/3; }
+    .section { padding:25px; }
+    .play-button { font-size:20px; padding:18px 45px; }
+    h1 { font-size:44px; }
+    .section h2 { font-size:26px; }
+    body { font-size:75%; }
+}
 </style>
 </head>
 <body>
 <div class="container">
 
-    <h1>Minedrop (Mine Drop) — слот в стиле Minecraft</h1>
+<h1 data-text="Minedrop (Mine Drop) — слот в стиле Minecraft">Minedrop (Mine Drop) — слот в стиле Minecraft</h1>
 
-    <div class="video-wrapper">
-        <video src="video.mp4" autoplay muted loop playsinline></video>
+<div class="video-wrapper">
+    <video src="https://minedropslot.vercel.app/video.mp4" autoplay muted loop playsinline loading="lazy" poster="https://minedropslot.vercel.app/background.jpg"></video>
+</div>
+
+<a href="https://one-vv6649.com/casino/list?open=register&sub1=mined" class="play-button">Играть онлайн</a>
+
+<div class="section" id="about">
+    <h2>Об игре Minedrop</h2>
+    <p>Minedrop — слот в стиле Minecraft с уникальной механикой разрушения блоков и каскадными выигрышами. Играть онлайн без скачивания. Откройте для себя мир пиксельной графики и стратегического азарта.</p>
+    <ul>
+        <li>RTP 96% — высокий процент возврата</li>
+        <li>Максимальный выигрыш до 5000× ставки</li>
+        <li>Динамичный геймплей с взрывами TNT</li>
+        <li>Три уникальных scatter-символа</li>
+        <li>Фиксированные джекпоты: Mini, Major, Mega</li>
+    </ul>
+</div>
+
+<div class="section">
+    <h2>Как играть</h2>
+    <p>Выбирайте ставку, вращайте барабаны и собирайте комбинации. Следите за TNT-блоками и собирайте уникальные комбинации для максимального выигрыша. Бонусные игры и бесплатные вращения повышают шансы на крупный джекпот.</p>
+</div>
+
+<div class="section">
+    <h2>Преимущества</h2>
+    <ul>
+        <li>Играть онлайн без скачивания</li>
+        <li>Яркая графика в стиле Minecraft</li>
+        <li>Доступно на любых устройствах</li>
+        <li>Подходит как для новичков, так и для опытных игроков</li>
+    </ul>
+</div>
+
+<div class="section faq" id="faq">
+    <h2>FAQ</h2>
+    <div class="faq-item">
+        <h3>Можно ли играть бесплатно?</h3>
+        <p>Да, игра доступна бесплатно прямо в браузере без регистрации.</p>
     </div>
-
-    <a href="https://one-vv6649.com/casino/list?open=register&sub1=mined" class="play-button">Играть онлайн</a>
-
-    <div class="section">
-        <h2>Об игре Minedrop</h2>
-        <p>Minedrop — это слот в стиле Minecraft с уникальной механикой разрушения блоков и каскадных выигрышей. Игра доступна прямо в браузере, без регистрации. Откройте для себя мир пиксельной графики и стратегического азарта.</p>
-        <ul>
-            <li>RTP 96% — высокий процент возврата</li>
-            <li>Максимальный выигрыш до 5000× ставки</li>
-            <li>Динамичный геймплей с взрывами TNT</li>
-            <li>Три уникальных scatter-символа</li>
-            <li>Фиксированные джекпоты: Mini, Major, Mega</li>
-        </ul>
+    <div class="faq-item">
+        <h3>На каких устройствах работает Minedrop?</h3>
+        <p>Поддерживаются компьютеры, планшеты и смартфоны.</p>
     </div>
-
-    <div class="section">
-        <h2>Как играть</h2>
-        <p>Выбирайте ставку, вращайте барабаны и собирайте комбинации. Игра сочетает классические элементы слотов с атмосферой Minecraft. Бонусные игры и бесплатные вращения повышают шансы на крупный выигрыш.</p>
+    <div class="faq-item">
+        <h3>Нужно ли скачивать игру?</h3>
+        <p>Нет, Minedrop работает полностью онлайн.</p>
     </div>
-
-    <div class="section">
-        <h2>Преимущества</h2>
-        <ul>
-            <li>Играть онлайн без скачивания</li>
-            <li>Яркая графика в стиле Minecraft</li>
-            <li>Доступно на любых устройствах</li>
-            <li>Подходит как для новичков, так и для опытных игроков</li>
-        </ul>
-    </div>
-
-    <div class="section faq">
-        <h2>FAQ</h2>
-        <div class="faq-item">
-            <h3>Можно ли играть бесплатно?</h3>
-            <p>Да, игра доступна бесплатно прямо в браузере без регистрации.</p>
-        </div>
-        <div class="faq-item">
-            <h3>На каких устройствах работает Minedrop?</h3>
-            <p>Поддерживаются компьютеры, планшеты и смартфоны.</p>
-        </div>
-        <div class="faq-item">
-            <h3>Нужно ли скачивать игру?</h3>
-            <p>Нет, Minedrop работает полностью онлайн.</p>
-        </div>
-    </div>
+</div>
 
 </div>
+
+<script>
+// FAQ аккордеон
+document.querySelectorAll('.faq-item h3').forEach(item => {
+    item.addEventListener('click', () => {
+        item.parentElement.classList.toggle('active');
+    });
+});
+
+// Анимация секций при скролле
+const sections = document.querySelectorAll('.section');
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('visible'); } });
+}, { threshold:0.2 });
+sections.forEach(section => observer.observe(section));
+</script>
 </body>
 </html>
+
 
