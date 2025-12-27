@@ -106,7 +106,22 @@ body::before {
 .play-button:hover { transform:scale(1.15); box-shadow:0 18px 50px rgba(0,0,0,0.95); }
 
 /* Разделы */
-.section { background:rgba(0,0,0,0.92); border:3px solid #ffd700; padding:35px 40px; margin:28px 0; border-radius:30px; text-align:justify; box-shadow:0 20px 50px rgba(0,0,0,0.85); display:flex; flex-direction:column; justify-content:flex-start; transition: transform 0.4s, box-shadow 0.4s; width:100%; max-width:850px; }
+.section {
+  width: 100%;
+  max-width: 1000px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(0,0,0,0.65));
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 16px;
+  padding: 36px 40px;
+  margin: 32px auto;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.55);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 35px 80px rgba(0,0,0,0.65);
+}
 .section:hover { transform:translateY(-10px); box-shadow:0 25px 65px rgba(0,0,0,0.9); }
 .section h2 { margin-bottom:20px; font-size:32px; color:#ffd700; text-shadow:2px 2px 8px rgba(0,0,0,0.8); letter-spacing:1px; text-align:center; }
 .section p, .section ul { font-size:17px; line-height:1.8; text-align:justify; display:block; margin:0 auto 15px auto; max-width:800px; color:#f0f0f0; word-break:break-word; }
@@ -122,13 +137,43 @@ body::before {
 .faq-item.active p { max-height:480px; padding:12px 0; }
 
 /* Анимация секций */
-.section { opacity:0; transform:translateY(30px); transition: all 0.9s ease-in-out; }
+.section {
+  width: 100%;
+  max-width: 1000px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(0,0,0,0.65));
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 16px;
+  padding: 36px 40px;
+  margin: 32px auto;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.55);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 35px 80px rgba(0,0,0,0.65);
+}
 .section.visible { opacity:1; transform:translateY(0); }
 
 /* Адаптив */
 @media(max-width:768px){
     .video-wrapper { width:95%; height:auto; aspect-ratio:16/9; }
-    .section { padding:25px; }
+    .section {
+  width: 100%;
+  max-width: 1000px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(0,0,0,0.65));
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 16px;
+  padding: 36px 40px;
+  margin: 32px auto;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.55);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 35px 80px rgba(0,0,0,0.65);
+}
     .play-button { font-size:20px; padding:18px 45px; }
     body { font-size:75%; }
     .section p, .section ul { max-width:100%; line-height:1.9; text-align:justify; }
@@ -202,5 +247,4 @@ sections.forEach(section => observer.observe(section));
 </script>
 </body>
 </html>
-
 
