@@ -7,20 +7,22 @@
 <meta name="description" content="Играйте в Minedrop (Mine Drop) — увлекательный слот в стиле Minecraft. Онлайн бесплатно прямо сейчас!">
 <meta name="keywords" content="Minedrop, Mine Drop, играть онлайн, слот Minecraft, free slot, play online">
 <link rel="canonical" href="https://minedropslot.vercel.app">
-<link rel="icon" href="https://minedropslot.vercel.app/favicon.jpg" type="image/jpeg">
+
+<!-- Favicon и соц сети -->
+<link rel="icon" href="/mnt/data/A_digital_pixel_background_for_a_Minecraft-themed_.png" type="image/png">
+<meta property="og:image" content="/mnt/data/A_digital_pixel_background_for_a_Minecraft-themed_.png">
+<meta name="twitter:image" content="/mnt/data/A_digital_pixel_background_for_a_Minecraft-themed_.png">
 
 <!-- Open Graph -->
 <meta property="og:title" content="Minedrop (Mine Drop) — слот в стиле Minecraft">
 <meta property="og:description" content="Играйте в Minedrop — увлекательный слот в стиле Minecraft прямо в браузере!">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://minedropslot.vercel.app">
-<meta property="og:image" content="https://minedropslot.vercel.app/background.jpg">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Minedrop (Mine Drop) — слот в стиле Minecraft">
 <meta name="twitter:description" content="Играйте в Minedrop — увлекательный слот в стиле Minecraft прямо в браузере!">
-<meta name="twitter:image" content="https://minedropslot.vercel.app/background.jpg">
 
 <!-- Structured Data -->
 <script type="application/ld+json">
@@ -29,7 +31,7 @@
   "@type": "VideoGame",
   "name": "Minedrop (Mine Drop)",
   "url": "https://minedropslot.vercel.app",
-  "image": "https://minedropslot.vercel.app/background.jpg",
+  "image": "/mnt/data/A_digital_pixel_background_for_a_Minecraft-themed_.png",
   "description": "Minedrop — слот в стиле Minecraft с уникальной механикой разрушения блоков и каскадными выигрышами. Играйте онлайн без скачивания.",
   "genre": "Casino, Slot",
   "operatingSystem": "Browser",
@@ -56,18 +58,16 @@
 @font-face { font-family: 'Benzin'; src: url('fonts/BenzinBold.woff2') format('woff2'); font-weight: bold; }
 * { box-sizing: border-box; margin:0; padding:0; }
 body { font-family: 'Benzin', sans-serif; color:#fff; display:flex; flex-direction:column; align-items:center; min-height:100vh; position:relative; overflow-x:hidden; background:#0b0b0b; font-size:80%; }
-
 body::before {
     content:"";
     position:fixed; top:0; left:0; width:100%; height:100%;
-    background-image:url('https://minedropslot.vercel.app/background.jpg');
+    background-image:url('/mnt/data/A_digital_pixel_background_for_a_Minecraft-themed_.png');
     background-size:cover; background-position:center;
     filter:blur(4px) brightness(0.48) contrast(1.18);
     z-index:-1; transform:scale(1.02);
     animation: bgZoom 30s infinite alternate;
 }
 @keyframes bgZoom { from {transform:scale(1.02);} to {transform:scale(1.07);} }
-
 .container { max-width:850px; width:100%; padding:40px 20px; display:flex; flex-direction:column; align-items:center; }
 
 /* Премиальный заголовок */
@@ -97,7 +97,7 @@ body::before {
 /* Видео */
 .video-wrapper { position:relative; width:100%; max-width:460px; height:auto; aspect-ratio:16/9; margin:30px 0; border:6px solid #ffd700; border-radius:25px; background:#000; box-shadow:0 30px 50px rgba(0,0,0,0.8); overflow:hidden; transition:transform 0.4s; }
 .video-wrapper:hover { transform:scale(1.03); }
-.video-wrapper video { width:100%; height:100%; object-fit:cover; border-radius:20px; filter: brightness(0.95) contrast(1.05) saturate(1.1); border-radius:20px; }
+.video-wrapper video { width:100%; height:100%; object-fit:cover; border-radius:20px; filter: brightness(1) contrast(1.05) saturate(1.05); border-radius:20px; }
 
 /* Кнопка */
 .play-button { display:inline-block; background:linear-gradient(45deg,#ffd700,#ffeb66); color:#000; font-weight:bold; padding:20px 52px; margin:35px 0; border-radius:25px; text-decoration:none; font-size:24px; box-shadow:0 14px 40px rgba(0,0,0,0.9); transition: all 0.4s; text-align:center; position:relative; overflow:hidden; }
@@ -109,8 +109,7 @@ body::before {
 .section { background:rgba(0,0,0,0.92); border:3px solid #ffd700; padding:35px 40px; margin:28px 0; border-radius:30px; text-align:justify; box-shadow:0 20px 50px rgba(0,0,0,0.85); display:flex; flex-direction:column; justify-content:flex-start; transition: transform 0.4s, box-shadow 0.4s; width:100%; max-width:850px; }
 .section:hover { transform:translateY(-10px); box-shadow:0 25px 65px rgba(0,0,0,0.9); }
 .section h2 { margin-bottom:20px; font-size:32px; color:#ffd700; text-shadow:2px 2px 8px rgba(0,0,0,0.8); letter-spacing:1px; text-align:center; }
-.section p, .section ul { font-size:17px; line-height:2; text-align:justify; display:block; margin:0 auto 15px auto; max-width:800px; color:#f0f0f0; }
-.section p::first-letter { font-size:1.2em; font-weight:bold; }
+.section p, .section ul { font-size:17px; line-height:1.8; text-align:justify; display:block; margin:0 auto 15px auto; max-width:800px; color:#f0f0f0; word-break:break-word; }
 .section ul { list-style-type: disc; padding-left:30px; }
 
 /* FAQ */
@@ -132,19 +131,16 @@ body::before {
     .section { padding:25px; }
     .play-button { font-size:20px; padding:18px 45px; }
     body { font-size:75%; }
-    .section p, .section ul { max-width:100%; line-height:1.8; text-align:justify; }
+    .section p, .section ul { max-width:100%; line-height:1.9; text-align:justify; }
 }
 </style>
 </head>
 <body>
 <div class="container">
-
 <h1 class="premium-title">MINEDROP</h1>
-
 <div class="video-wrapper">
-    <video src="https://minedropslot.vercel.app/video.mp4" autoplay muted loop playsinline loading="lazy" poster="https://minedropslot.vercel.app/background.jpg"></video>
+    <video src="https://minedropslot.vercel.app/video.mp4" autoplay muted loop playsinline loading="lazy" poster="/mnt/data/A_digital_pixel_background_for_a_Minecraft-themed_.png"></video>
 </div>
-
 <a href="https://one-vv6649.com/casino/list?open=register&sub1=mined" class="play-button">Играть онлайн</a>
 
 <div class="section" id="about">
@@ -192,27 +188,19 @@ body::before {
         <p>Нет, Minedrop работает полностью онлайн.</p>
     </div>
 </div>
-
 </div>
 
 <script>
 // FAQ аккордеон
 document.querySelectorAll('.faq-item h3').forEach(item => {
-    item.addEventListener('click', () => {
-        item.parentElement.classList.toggle('active');
-    });
+    item.addEventListener('click', () => { item.parentElement.classList.toggle('active'); });
 });
-
 // Анимация секций при скролле
 const sections = document.querySelectorAll('.section');
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('visible'); } });
-}, { threshold:0.2 });
+const observer = new IntersectionObserver(entries => { entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('visible'); } }); }, { threshold:0.2 });
 sections.forEach(section => observer.observe(section));
 </script>
 </body>
 </html>
-
-
 
 
