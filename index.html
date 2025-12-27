@@ -22,7 +22,7 @@
 <meta name="twitter:description" content="Играйте в Minedrop — увлекательный слот в стиле Minecraft прямо в браузере!">
 <meta name="twitter:image" content="https://minedropslot.vercel.app/background.jpg">
 
-<!-- Structured Data: VideoGame & Breadcrumb -->
+<!-- Structured Data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -37,6 +37,7 @@
   "author": { "@type": "Organization", "name": "Minedrop Slot" }
 }
 </script>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -50,13 +51,12 @@
 </script>
 
 <style>
-/* --- ШРИФТЫ --- */
+/* --- Шрифты --- */
 @font-face { font-family: 'Minecraft'; src: url('fonts/minecraft-ten-font-cyrillic.woff2') format('woff2'); }
 @font-face { font-family: 'Benzin'; src: url('fonts/BenzinBold.woff2') format('woff2'); font-weight: bold; }
 * { box-sizing: border-box; margin:0; padding:0; }
 body { font-family: 'Benzin', sans-serif; color:#fff; display:flex; flex-direction:column; align-items:center; min-height:100vh; position:relative; overflow-x:hidden; background:#0b0b0b; font-size:80%; }
 
-/* Фон */
 body::before {
     content:"";
     position:fixed; top:0; left:0; width:100%; height:100%;
@@ -68,7 +68,7 @@ body::before {
 }
 @keyframes bgZoom { from {transform:scale(1.02);} to {transform:scale(1.07);} }
 
-.container { max-width:950px; width:100%; padding:40px 15px; display:flex; flex-direction:column; align-items:center; }
+.container { max-width:850px; width:100%; padding:40px 20px; display:flex; flex-direction:column; align-items:center; }
 
 /* Премиальный заголовок */
 .premium-title {
@@ -95,27 +95,23 @@ body::before {
 @media(max-width:768px){ .premium-title { font-size: 48px; } }
 
 /* Видео */
-.video-wrapper { position:relative; width:460px; height:280px; margin:30px 0;
-border:6px solid #ffd700; border-radius:25px; background:#000;
-box-shadow:0 30px 70px rgba(0,0,0,0.9); overflow:hidden; transition:transform 0.4s; }
-.video-wrapper:hover { transform:scale(1.05); }
-.video-wrapper video { width:100%; height:100%; object-fit:cover; border-radius:20px; filter: brightness(1.25) contrast(1.15); }
+.video-wrapper { position:relative; width:100%; max-width:460px; height:auto; aspect-ratio:16/9; margin:30px 0; border:6px solid #ffd700; border-radius:25px; background:#000; box-shadow:0 30px 50px rgba(0,0,0,0.8); overflow:hidden; transition:transform 0.4s; }
+.video-wrapper:hover { transform:scale(1.03); }
+.video-wrapper video { width:100%; height:100%; object-fit:cover; border-radius:20px; filter: brightness(0.95) contrast(1.05) saturate(1.1); border-radius:20px; }
 
 /* Кнопка */
-.play-button { display:inline-block; background:linear-gradient(45deg,#ffd700,#ffeb66); color:#000; font-weight:bold;
-padding:20px 52px; margin:35px 0; border-radius:25px; text-decoration:none; font-size:24px;
-box-shadow:0 14px 40px rgba(0,0,0,0.9); transition: all 0.4s; text-align:center; position:relative; overflow:hidden; }
+.play-button { display:inline-block; background:linear-gradient(45deg,#ffd700,#ffeb66); color:#000; font-weight:bold; padding:20px 52px; margin:35px 0; border-radius:25px; text-decoration:none; font-size:24px; box-shadow:0 14px 40px rgba(0,0,0,0.9); transition: all 0.4s; text-align:center; position:relative; overflow:hidden; }
 .play-button::after { content:''; position:absolute; top:0; left:-75%; width:50%; height:100%; background:rgba(255,255,255,0.3); transform:skewX(-25deg); transition: all 0.5s; }
 .play-button:hover::after { left:125%; }
-.play-button:hover { transform:scale(1.18); box-shadow:0 18px 50px rgba(0,0,0,0.95); }
+.play-button:hover { transform:scale(1.15); box-shadow:0 18px 50px rgba(0,0,0,0.95); }
 
 /* Разделы */
-.section { background:rgba(0,0,0,0.94); border:3px solid #ffd700; padding:40px; margin:28px 0;
-border-radius:30px; text-align:center; max-width:900px; box-shadow:0 20px 60px rgba(0,0,0,0.9); transition: transform 0.4s, box-shadow 0.4s; }
-.section:hover { transform:translateY(-12px); box-shadow:0 25px 70px rgba(0,0,0,0.95); }
-.section h2 { margin-bottom:28px; font-size:32px; color:#ffd700; text-shadow:2px 2px 10px rgba(0,0,0,0.8); letter-spacing:1px; }
-.section p, .section ul { font-size:16px; line-height:1.6; text-align:left; display:inline-block; max-width:92%; }
-.section ul { list-style-type: disc; padding-left:28px; }
+.section { background:rgba(0,0,0,0.92); border:3px solid #ffd700; padding:35px 40px; margin:28px 0; border-radius:30px; text-align:justify; box-shadow:0 20px 50px rgba(0,0,0,0.85); display:flex; flex-direction:column; justify-content:flex-start; transition: transform 0.4s, box-shadow 0.4s; width:100%; max-width:850px; }
+.section:hover { transform:translateY(-10px); box-shadow:0 25px 65px rgba(0,0,0,0.9); }
+.section h2 { margin-bottom:20px; font-size:32px; color:#ffd700; text-shadow:2px 2px 8px rgba(0,0,0,0.8); letter-spacing:1px; text-align:center; }
+.section p, .section ul { font-size:17px; line-height:2; text-align:justify; display:block; margin:0 auto 15px auto; max-width:800px; color:#f0f0f0; }
+.section p::first-letter { font-size:1.2em; font-weight:bold; }
+.section ul { list-style-type: disc; padding-left:30px; }
 
 /* FAQ */
 .faq-item { margin-bottom:24px; border-bottom:1px solid rgba(255,215,0,0.3); border-radius:15px; overflow:hidden; }
@@ -123,19 +119,20 @@ border-radius:30px; text-align:center; max-width:900px; box-shadow:0 20px 60px r
 .faq-item h3::after { content: '+'; position:absolute; right:20px; font-weight:bold; font-size:21px; }
 .faq-item.active h3::after { content: '-'; }
 .faq-item.active h3 { background:rgba(255,215,0,0.25); }
-.faq-item p { margin-left:15px; max-height:0; overflow:hidden; transition:max-height 0.5s ease, padding 0.3s; padding:0 0; font-size:16px; }
+.faq-item p { margin-left:15px; max-height:0; overflow:hidden; transition:max-height 0.5s ease, padding 0.3s; padding:0 0; font-size:17px; }
 .faq-item.active p { max-height:480px; padding:12px 0; }
 
 /* Анимация секций */
-.section { opacity:0; transform:translateY(40px); transition: all 0.9s ease-in-out; }
+.section { opacity:0; transform:translateY(30px); transition: all 0.9s ease-in-out; }
 .section.visible { opacity:1; transform:translateY(0); }
 
 /* Адаптив */
 @media(max-width:768px){
-    .video-wrapper { width:95%; height:auto; aspect-ratio:5/3; }
+    .video-wrapper { width:95%; height:auto; aspect-ratio:16/9; }
     .section { padding:25px; }
     .play-button { font-size:20px; padding:18px 45px; }
     body { font-size:75%; }
+    .section p, .section ul { max-width:100%; line-height:1.8; text-align:justify; }
 }
 </style>
 </head>
@@ -152,7 +149,8 @@ border-radius:30px; text-align:center; max-width:900px; box-shadow:0 20px 60px r
 
 <div class="section" id="about">
     <h2>Об игре Minedrop</h2>
-    <p>Minedrop — слот в стиле Minecraft с уникальной механикой разрушения блоков и каскадными выигрышами. Играть онлайн без скачивания. Откройте для себя мир пиксельной графики и стратегического азарта.</p>
+    <p>Minedrop — слот в стиле Minecraft с уникальной механикой разрушения блоков и каскадными выигрышами.</p>
+    <p>Игра доступна прямо в браузере без скачивания. Откройте для себя мир пиксельной графики и стратегического азарта.</p>
     <ul>
         <li>RTP 96% — высокий процент возврата</li>
         <li>Максимальный выигрыш до 5000× ставки</li>
@@ -164,10 +162,12 @@ border-radius:30px; text-align:center; max-width:900px; box-shadow:0 20px 60px r
 
 <div class="section">
     <h2>Как играть</h2>
-    <p>Выбирайте ставку, вращайте барабаны и собирайте комбинации. Следите за TNT-блоками и собирайте уникальные комбинации для максимального выигрыша. Бонусные игры и бесплатные вращения повышают шансы на крупный джекпот.</p>
+    <p>Выбирайте ставку, вращайте барабаны и собирайте комбинации.</p>
+    <p>Следите за TNT-блоками и собирайте уникальные комбинации для максимального выигрыша.</p>
+    <p>Бонусные игры и бесплатные вращения повышают шансы на крупный джекпот.</p>
 </div>
 
-<div class="section">
+<div class="section" id="advantages">
     <h2>Преимущества</h2>
     <ul>
         <li>Играть онлайн без скачивания</li>
@@ -212,6 +212,7 @@ sections.forEach(section => observer.observe(section));
 </script>
 </body>
 </html>
+
 
 
 
